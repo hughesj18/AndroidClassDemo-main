@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/baseline_10k_24"/>
+            tools:src="@drawable/baseline_10k_24" />
 
         <TextView
             android:id="@+id/survivor_name"
@@ -27,7 +27,8 @@
             android:textSize="32sp"
             app:layout_constraintStart_toEndOf="@id/survivor_image"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Commando"/>
+            tools:text="Commando"
+            android:layout_marginStart="16dp"/>
         <TextView
             android:id="@+id/survivor_health"
             android:layout_width="wrap_content"

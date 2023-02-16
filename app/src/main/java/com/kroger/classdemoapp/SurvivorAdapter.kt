@@ -19,13 +19,15 @@ class SurvivorAdapter(private val survivors: List<Survivor>) : RecyclerView.Adap
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.survivor_card_view, parent, false)
         return SurvivorViewHolder(view) { position ->
-            val character = survivors[position]
+            val survivor = survivors[position]
 
             val bundle = bundleOf(
-                "name" to character.name,
-                "health" to character.health,
-                "image" to character.image,
-                "damage" to character.damage
+                "name" to survivor.name,
+                "health" to survivor.health,
+                "image" to survivor.image,
+                "damage" to survivor.damage,
+                "speed" to survivor.speed,
+                "desc" to survivor.desc
             )
 
             val detailFragment = SurvivorDetailFragment()
@@ -49,10 +51,11 @@ class SurvivorAdapter(private val survivors: List<Survivor>) : RecyclerView.Adap
         Glide
             .with(holder.itemView.context)
             .load(survivor.image)
+            .override(400,300)
             .into(holder.survivorImage)
         holder.survivorName.text = survivor.name
-        holder.survivorAge.text = survivor.health.toString()
-        holder.survivorRegen.text = survivor.damage.toString()
+        holder.survivorAge.text = "Health: " + survivor.health.toString()
+        holder.survivorRegen.text = "Damage: " + survivor.damage.toString()
     }
 
     inner class SurvivorViewHolder(

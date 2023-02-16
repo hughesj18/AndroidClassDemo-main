@@ -5,6 +5,7 @@ data class Survivor(
     val health: Int,
     val image: String,
     val damage: Int,
-    val speed: Int
+    val speed: Int,
+    val desc: String
 )
 
